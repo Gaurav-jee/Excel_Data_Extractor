@@ -1,0 +1,5 @@
+1. Name , Add. , phone should be bifurcated
+
+2. Dated summing should be there.
+
+3. Total/ grand calucation.
