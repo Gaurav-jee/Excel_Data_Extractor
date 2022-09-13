@@ -8,6 +8,11 @@ import csv
 
 def main():
     print("########################## File Aggregation System. #############################")
+    print("")
+    print("")
+
+    folder_path = os.path.dirname(os.path.realpath(__file__))
+
     report_name = input("Enter the Report Name: ")    
     # list to store file names
     res = []
@@ -49,7 +54,7 @@ def main():
 
     def prepareAggregations():
         for bill in tqdm(res, desc = "Calculating the Aggregations ..."):
-            df = pd.read_excel(os.path.join(os.path.dirname(os.path.realpath(__file__)), bill),engine='openpyxl')
+            df = pd.read_excel(os.path.join(folder_path, bill),engine='openpyxl')
             curr_list = buildList(bill, df, getIndex(df))
             final_list.append(curr_list)
         
@@ -57,15 +62,20 @@ def main():
         
         def GenerateReport():
             print("Generating Report ...")
-            with open( report_name + "Report.csv", 'w',encoding="utf-8") as f:
+            with open( os.path.join(folder_path, report_name + "Report.csv"), 'w',encoding="utf-8") as f:
                 fields = ['Party', 'TOTAL NO PCS.', 'TOTAL AMOUNT', '(मूर्ति)  दुकान', '(गणेश लक्ष्मी)  दुकान', 'LOADING CHARGE (लेबर खर्चा)', 'TRANSPORTATION (गाड़ी भाड़ा)', 'PACKING CHARGES (कार्टून, रस्सी, नेवारी)', 'पहेले का बकाया', 'GRAND TOTAL/ कुल', 'ADVANCE/ अग्रिम', 'PAYABLE/ देय']
                 write = csv.writer(f)
                 write.writerow(fields)
                 write.writerows(final_list)
+            print("Report Generated Successfully ...")
         GenerateReport()
     
     getFileList()
     prepareAggregations()
+    print("")
+    print("")
+    print("Please find your reports at:", folder_path, "by the name ->", report_name)
+    
     
 if __name__== "__main__" :
         main()
