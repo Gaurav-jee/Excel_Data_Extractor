@@ -16,4 +16,12 @@ Helps in extracting data from multiple files in a given directory
 
 ![image](https://user-images.githubusercontent.com/40340633/187672432-cfc238d1-d924-4ec3-8852-617ec54b3b35.png)
 
+
+<h3>The final Report generation file is inside the new bills folder</h3>
+
 Additions I am planning to implement -> https://www.youtube.com/watch?v=7zeAIEPJaoQ&ab_channel=CodingIsFun
+
+<ul>
+  <li>## -> next step -> https://towardsdatascience.com/how-to-easily-convert-a-python-script-to-an-executable-file-exe-4966e253c7e9</li>
+  <li>## -> next Step -> https://www.youtube.com/watch?v=svcv8uub0D0&ab_channel=CodingIsFun</li>
+</ul>
