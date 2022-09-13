@@ -24,4 +24,7 @@ Additions I am planning to implement -> https://www.youtube.com/watch?v=7zeAIEPJ
 <ul>
   <li>## -> next step -> https://towardsdatascience.com/how-to-easily-convert-a-python-script-to-an-executable-file-exe-4966e253c7e9</li>
   <li>## -> next Step -> https://www.youtube.com/watch?v=svcv8uub0D0&ab_channel=CodingIsFun</li>
+  <li>Adding Creation Dates to the Report</li>
+  <li>Grand Total Aggregation row</li>
+  <li>New bull detection and removal</li>
 </ul>
