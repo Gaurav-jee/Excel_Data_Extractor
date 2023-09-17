@@ -26,5 +26,5 @@ Additions I am planning to implement -> https://www.youtube.com/watch?v=7zeAIEPJ
   <li>## -> next Step -> https://www.youtube.com/watch?v=svcv8uub0D0&ab_channel=CodingIsFun</li>
   <li>Adding Creation Dates to the Report</li>
   <li>Grand Total Aggregation row</li>
-  <li>New bull detection and removal</li>
+  <li>New bill detection and removal (Remove the bills having the count as zero)</li>
 </ul>
