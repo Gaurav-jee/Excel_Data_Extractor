@@ -3,6 +3,7 @@ import pandas as pd
 from openpyxl.utils.exceptions import InvalidFileException
 from tqdm import tqdm 
 import csv 
+import datetime 
 
 final_list = []
 combined_df = pd.DataFrame()
@@ -51,7 +52,7 @@ def buildCurrList(bill, df, index):
 def GenerateReport(Input_folder, report_name):
     print("Generating Report ...")
     with open( os.path.join(Input_folder, report_name + "_SaleReport.csv"), 'w', newline='',encoding="utf-8-sig") as f:
-        fields = ['Party', 'TOTAL NO PCS.', 'TOTAL AMOUNT', 'Murti Dukan', 'GL  Dukan', 'LOADING CHARGE', 'TRANSPORTATION', 'PACKING CHARGES', 'Dues', 'GRAND TOTAL', 'ADVANCE', 'PAYABLE']
+        fields = ['Creation Date','Party', 'TOTAL NO PCS.', 'TOTAL AMOUNT', 'Murti Dukan', 'GL  Dukan', 'LOADING CHARGE', 'TRANSPORTATION', 'PACKING CHARGES', 'Dues', 'GRAND TOTAL', 'ADVANCE', 'PAYABLE']
         write = csv.writer(f)
         write.writerow(fields)
         write.writerows(final_list)
@@ -72,7 +73,10 @@ def generate(input_folder, output_file_name):
         excel_file_path = os.path.join(input_folder, file)
         df = pd.read_excel(excel_file_path, sheet_name='Summary Sheet')
         curr_list =  df.iloc[0].tolist()
-        curr_list = [file] + curr_list
+        
+        creation_date = datetime.datetime.fromtimestamp(os.stat(excel_file_path).st_ctime)
+        print(creation_date)
+        curr_list = [creation_date] + [file] + curr_list
         print(curr_list)
         final_list.append(curr_list)
     GenerateReport(input_folder, output_file_name)
