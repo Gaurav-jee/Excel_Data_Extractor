@@ -79,5 +79,8 @@ def main():
     
 if __name__== "__main__" :
         main()
+
+## Create the report, open in an editor that shows the output well (VS code extensions etc) copy results from that, hindi text fixed and extra rows removed as well. 
 ## -> next step -> https://towardsdatascience.com/how-to-easily-convert-a-python-script-to-an-executable-file-exe-4966e253c7e9
+
 ## -> next Step -> https://www.youtube.com/watch?v=svcv8uub0D0&ab_channel=CodingIsFun
